@@ -1,0 +1,15 @@
+{
+  "triggerOnUpdates": true,
+  "statusCheck": true,
+  "statusCommentsEnabled": true,
+  "strictness": 2,
+  "includeBranches": [
+    "main",
+    "master"
+  ],
+  "commentTypes": [
+    "logic",
+    "syntax",
+    "style"
+  ]
+}
