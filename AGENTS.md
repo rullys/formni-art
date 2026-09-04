@@ -89,3 +89,56 @@ https://app.notion.com/p/3cff32bdb8f081a8b087c23c3aea2365
 Pendeteksinya berjalan tiap jam di gateway (`unpushed-watch.py`) dan juga
 memeriksa tata letak di atas.
 <!-- END:onivor-push-discipline -->
+
+<!-- BEGIN:onivor-linear-method -->
+# Linear Method Onivor: scrumban, cycles, dan Active board
+
+Linear adalah satu-satunya tempat status eksekusi hidup. Tidak ada kerja
+tanpa isu, dan tidak ada isu yang statusnya menyimpang dari kenyataan.
+
+## Dua tampilan, satu aturan
+
+- **Cycles** (pola sprint): kerja yang disepakati untuk periode berjalan.
+  Founder menyusun urutan di awal cycle; yang tidak selesai bergulir ke cycle
+  berikutnya dengan catatan kenapa.
+- **Active board** (kanban): Backlog, Todo, In Progress, In Review, Done,
+  Canceled. **Yang paling atas di tiap kolom dikerjakan lebih dulu.** Urutan
+  kolom adalah keputusan prioritas founder; agen tidak memilih tugas yang lebih
+  menarik di bawahnya.
+
+## Alur status, dan siapa yang menggerakkannya
+
+1. Backlog paling atas -> Todo, saat masuk cycle.
+2. Todo paling atas -> In Progress, oleh agen yang mulai mengerjakan, SEBELUM
+   baris pertama ditulis. Satu agen, satu In Progress.
+3. In Progress -> In Review, saat PR sudah bersih dari reviewer lintas model
+   (Greptile, Codex, atau yang berlaku di repo itu). **In Review milik
+   founder**: ia yang mereview dan menutup, agen tidak melewatinya.
+4. -> Done hanya kalau kodenya ter-push dan merged (Done tanpa commit adalah
+   kebohongan, lihat blok push discipline). -> Canceled dengan alasan.
+
+## Temuan bukan pekerjaan sampingan
+
+Apa pun yang ditemukan saat bekerja (bug, lubang keamanan, salinan yang
+salah, tes yang bohong) masuk sebagai isu Backlog baru, bertanggal, dengan
+prioritas (Urgent, High, Medium, Low) dan bukti (file:baris, angka, tautan).
+Jangan dikerjakan diam-diam di PR yang sedang berjalan, dan jangan disimpan di
+kepala.
+
+## Isu yang baik
+
+- Ditulis sebagai isu, bukan user story: keadaan sekarang, kenapa itu masalah,
+  arah perbaikan, definisi selesai.
+- Cabang mengikuti nama dari Linear; PR menyebut isunya (`Closes ONI-n`).
+- Satu isu satu hal. Isu yang membengkak dipecah, bukan diperpanjang.
+- Backlog dijaga kecil: yang tidak akan dikerjakan dalam dua cycle diarsipkan
+  atau di-cancel dengan alasan, bukan dibiarkan menua.
+
+## Kenapa
+
+Founder memantau eksekusi seluruh portofolio dari kanban Linear, sering dari
+ponsel. Kanban yang jujur hanya mungkin kalau setiap agen menggerakkan
+statusnya sendiri pada saat yang tepat. Aturan ini (ketukan founder 4 Sep
+2026) melengkapi blok push discipline: GitHub memegang kode, Linear memegang
+status, dan keduanya tidak boleh saling mendahului.
+<!-- END:onivor-linear-method -->
