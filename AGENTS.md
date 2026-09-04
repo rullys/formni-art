@@ -38,10 +38,11 @@ pernah "diselamatkan" dengan cara ini.
 
 ## Tata letak di mesin Onivor: satu proyek, satu direktori
 
-`~/repos/onivor/<proyek>` adalah satu clone penuh per proyek, dan `<proyek>`
-sama persis dengan nama repo di GitHub. Level atas `~/repos/onivor` hanya
-berisi direktori proyek itu: tidak ada worktree, salinan kedua, berkas lepas,
-atau direktori kosong di sana.
+Akar repo berbeda per mesin: `~/repos/onivor` di gateway MBP, `~/Projects` di
+MBP founder. Di bawah akar itu, `<akar>/<proyek>` adalah satu clone penuh per
+proyek, dan `<proyek>` sama persis dengan nama repo di GitHub. Tidak ada
+worktree, salinan kedua, atau clone bernama lain di level atas akar (di MBP
+founder, folder pribadi yang bukan repo boleh ada di samping proyek).
 
 Clone proyek berdiri di `dev` kalau repo itu punya `dev`, kalau tidak di cabang
 defaultnya, dan tetap bersih saat tidak sedang dipakai. Tidak ada perubahan yang
@@ -49,10 +50,10 @@ menginap di dalamnya.
 
 Cabang kerja yang butuh direktori sendiri (rilis berjalan bersamaan dengan
 fitur, atau dua agen di repo yang sama) memakai worktree, dan worktree hidup di
-`~/repos/onivor/.worktrees/<proyek>/<nama>`:
+`<akar>/.worktrees/<proyek>/<nama>`:
 
 ```
-git -C ~/repos/onivor/<proyek> worktree add ~/repos/onivor/.worktrees/<proyek>/<nama> <cabang>
+git -C <akar>/<proyek> worktree add <akar>/.worktrees/<proyek>/<nama> <cabang>
 ```
 
 Begitu PR-nya merged, worktree itu dihapus dengan `git worktree remove`.
